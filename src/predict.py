@@ -1,11 +1,10 @@
 import numpy as np
-import sys
 import joblib
 
-from sklearn.ensemble import RandomForestClassifier
 from rdkit import Chem
 from rdkit.Chem import AllChem, DataStructs
 
+import sys
 smi = sys.argv[1]
 model = sys.argv[2]
 
@@ -13,7 +12,7 @@ def smi_to_fps(smi):
     mol = Chem.MolFromSmiles(smi)
     fp = AllChem.GetMorganFingerprintAsBitVect(mol, 5, nBits=500) # gets the vector
     arr = np.zeros((0,))
-    DataStructs.ConvertToNumpyArray(fp,arr)  # converts the vector to numpy array
+    DataStructs.ConvertToNumpyArray(fp,arr)  #converts the vector to numpy array
     return arr
 
 def _load_model(model):
@@ -25,7 +24,7 @@ def predict(model, x):
     y_pred = mdl.predict_proba(x)
     return y_pred
 
-if __name__ == "__main__":
-    x = smi_to_fps(smi)
-    y_pred = predict(model, np.array([x]))
-    print(y_pred)
+
+x = smi_to_fps(smi)
+y_pred = predict(model, np.array([x]))
+print(y_pred)
