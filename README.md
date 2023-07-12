@@ -20,5 +20,4 @@ python ../src/predict.py <"your molecule"> <model_name>
 ```
 ###This is WIP, just a quick way of loading models outside the notebook
 
-## License
 
