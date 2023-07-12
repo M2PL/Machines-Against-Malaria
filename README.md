@@ -1,5 +1,5 @@
 # Machines against malaria
-This code corresponds to the work XXX ##TODO
+This code corresponds to the work done by M2PL in building ABS and dual-activity prediction models. Code relating to cluster-based undersampling, chemical space visualization, model building and evaluation are contained within the respective folders and the datasets for scripts are available in the Databases folder.
 
 ## Requirements
 Create a conda environment using the following command:
